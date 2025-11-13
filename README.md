@@ -301,7 +301,7 @@
 
   <div class="container copyright">
       <p>© 2025 Male y Abi - Artisan Store</p>
-      <img src="[c:\Users\Lauti\Documents\maleee\metodos de pago.jpg](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHJxgsnLYlKoo0vqo7evGD5Vir2Nt6ikreTQ&s)" alt="Métodos de pago" style="height:40px;">
+      <img src="https://sistemahost.com/images/metodos-pago.png" alt="Métodos de pago" style="height:40px;">
     </div>
   </footer>
 </body>
