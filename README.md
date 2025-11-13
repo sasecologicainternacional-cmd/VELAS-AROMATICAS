@@ -1,1 +1,308 @@
-# VELAS-AROMATICAS
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Male y Abi - Artisan Store</title>
+
+  <!-- Iconos Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  :root {
+    --primary: #c77dff;
+    --light: #f3e5f5;
+    --dark: #1b1b1b;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{font-size:62.5%;font-family:'Poppins',sans-serif;}
+  body{background-color:var(--light);color:var(--dark);}
+
+  /* CONTENEDOR GENERAL */
+  .container{max-width:120rem;margin:0 auto;padding:0 2rem;}
+  .heading-1{text-align:center;font-size:3rem;font-weight:600;margin:3rem 0;}
+
+  /* HEADER */
+  .container-hero{background:#fff;}
+  .hero{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;}
+  .customer-support{display:flex;align-items:center;gap:1rem;}
+  .customer-support i{font-size:2.5rem;color:var(--primary);}
+  .customer-support .text{font-weight:600;}
+  .container-logo{display:flex;align-items:center;gap:1rem;}
+  .container-logo i{font-size:3rem;color:var(--primary);}
+  .container-logo a{text-decoration:none;font-size:2.4rem;font-weight:700;color:var(--dark);}
+  .container-user i{font-size:2.4rem;color:var(--primary);margin-left:1.2rem;cursor:pointer;}
+
+  /* NAVBAR */
+  .container-navbar{background:var(--primary);}
+  .navbar{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;}
+  .menu{display:flex;list-style:none;gap:2rem;}
+  .menu a{text-decoration:none;color:#fff;font-weight:600;font-size:1.4rem;}
+  .menu a:hover{text-decoration:underline;}
+  .search-form{display:flex;background:#fff;border-radius:2rem;overflow:hidden;}
+  .search-form input{border:none;outline:none;padding:.8rem 1.2rem;width:18rem;}
+  .btn-search{background:var(--primary);border:none;padding:0 1rem;cursor:pointer;}
+  .btn-search i{color:#fff;font-size:1.6rem;}
+
+  /* BANNER */
+  .banner{background:url('img/portada2.jpg') center/cover no-repeat;
+          height:60rem;display:flex;align-items:center;
+          background-blend-mode:multiply;
+          background-color:#00000060;}
+  .content-banner{color:#fff;text-align:center;width:100%;}
+  .content-banner p{color:var(--primary);font-size:1.8rem;font-weight:600;}
+  .content-banner h2{font-size:4rem;margin:1.5rem 0;}
+  .content-banner a{text-decoration:none;background:var(--primary);color:#fff;
+                    padding:1rem 2.5rem;border-radius:2rem;font-weight:600;}
+
+  /* FEATURES */
+  .container-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:2rem;margin:3rem 0;}
+  .card-feature{background:#fff;display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:1rem;}
+  .card-feature i{font-size:2.5rem;color:var(--primary);}
+  .card-feature span{font-weight:700;}
+  .card-feature p{font-size:1.3rem;color:#555;}
+
+  /* CATEGORÍAS */
+  .container-categories{display:grid;grid-template-columns:repeat(auto-fit,minmax(25rem,1fr));gap:2rem;}
+  .card-category{height:20rem;border-radius:1rem;display:flex;flex-direction:column;
+                 justify-content:center;align-items:center;color:#fff;text-shadow:1px 1px 3px #000;}
+  .category-moca{background:url('img/velaflorar.jpg') center/cover;}
+  .category-expreso{background:url('img/citricos.jpg') center/cover;}
+  .category-capuchino{background:url('img/frutal.jpg') center/cover;}
+  .card-category p{font-size:2.2rem;font-weight:600;}
+  .card-category span{background:rgba(0,0,0,0.5);padding:.3rem 1rem;border-radius:1rem;margin-top:.6rem;}
+
+  /* PRODUCTOS */
+  .container-products{display:grid;grid-template-columns:repeat(auto-fit,minmax(22rem,1fr));gap:2rem;margin:2rem 0;}
+  .card-product{background:#fff;padding:1rem;border-radius:.8rem;box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+  .container-img{position:relative;}
+  .container-img img{width:100%;height:20rem;object-fit:cover;border-radius:.6rem;}
+  .discount{position:absolute;top:1rem;left:1rem;background:var(--primary);color:#fff;
+            padding:.3rem .8rem;border-radius:1rem;font-size:1.2rem;}
+  .content-card-product{padding-top:.8rem;}
+  .stars i{color:var(--primary);}
+  .price{font-size:1.6rem;font-weight:700;margin-top:.5rem;}
+  .price span{text-decoration:line-through;color:#777;font-size:1.3rem;margin-left:.5rem;}
+
+  /* GALERÍA */
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:1rem;margin:3rem 0;}
+  .gallery img{width:100%;height:20rem;object-fit:cover;border-radius:.6rem;}
+
+  /* BLOGS */
+  .container-blogs{display:grid;grid-template-columns:repeat(auto-fit,minmax(28rem,1fr));gap:2rem;}
+  .card-blog{background:#fff;border-radius:1rem;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,0.1);}
+  .card-blog img{width:100%;height:18rem;object-fit:cover;}
+  .content-blog{padding:1.2rem;}
+  .content-blog h3{font-size:1.8rem;margin-bottom:.5rem;color:var(--primary);}
+  .content-blog p{font-size:1.4rem;color:#333;}
+
+  /* FOOTER */
+  .footer{background:var(--primary);color:#fff;margin-top:3rem;padding:2rem 0;}
+  .menu-footer{display:grid;grid-template-columns:repeat(auto-fit,minmax(20rem,1fr));gap:2rem;align-items:start;}
+  .title-footer{font-weight:700;margin-bottom:1rem;font-size:1.6rem;}
+  .menu-footer ul{list-style:none;padding:0;}
+  .menu-footer a{color:#fff;text-decoration:none;font-size:1.3rem;}
+  .social-icons{display:flex;gap:1rem;margin-top:1rem;}
+  .social-icons i{font-size:2rem;}
+  .newsletter input{width:100%;padding:.6rem;border:none;border-radius:.4rem;margin-bottom:.5rem;}
+  .newsletter button{background:#fff;color:var(--primary);border:none;padding:.6rem 1rem;border-radius:.4rem;font-weight:600;}
+  .copyright{text-align:center;margin-top:2rem;border-top:1px solid #fff4;padding-top:1rem;font-size:1.3rem;}
+
+  /* Responsive tweaks */
+  @media (max-width:768px){
+    .menu{display:none;}
+    .search-form input{width:12rem;}
+    .banner{height:40rem;}
+    .content-banner h2{font-size:2.8rem;}
+  }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container-hero">
+      <div class="container hero">
+        <div class="customer-support">
+          <i class="fa-solid fa-headset"></i>
+          <div>
+            <span class="text">Soporte al cliente</span><br>
+            <span>381-405-1240</span>
+          </div>
+        </div>
+        <div class="container-logo">
+          <i class="fa-solid fa-menorah"></i>
+          <h1><a href="#">ARTISAN STORE</a></h1>
+        </div>
+        <div class="container-user">
+          <i class="fa-solid fa-user" title="Mi cuenta"></i>
+          <i class="fa-solid fa-basket-shopping" title="Carrito"></i>
+        </div>
+      </div>
+    </div>
+
+  <div class="container-navbar">
+      <nav class="navbar container">
+        <ul class="menu" role="menubar" aria-label="Menú principal">
+          <li role="none"><a role="menuitem" href="#">Inicio</a></li>
+          <li role="none"><a role="menuitem" href="#">Vainilla</a></li>
+          <li role="none"><a role="menuitem" href="#">Coco</a></li>
+          <li role="none"><a role="menuitem" href="#">Lavanda</a></li>
+          <li role="none"><a role="menuitem" href="#">Más</a></li>
+        </ul>
+
+  <form class="search-form" role="search" aria-label="Buscar productos">
+          <input type="search" placeholder="Buscar..." aria-label="Buscar">
+          <button class="btn-search" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banner" role="region" aria-label="Banner principal">
+    <div class="content-banner container">
+      <p>Olores Deliciosos</p>
+       <div class="container-img"><img src="https://tn.com.ar/resizer/v2/velas-aromaticas-el-elemento-clave-en-una-decoracion-calida-imagen-ilustrativa-freepik-SLSHNQQ6HVDDRKKP3OQNGES6MU.jpg?auth=67d038c5186ab8b2fe13dd61bef123a9259d53d055a9b8fef4abbd8c7f836971&width=1440" alt="Velas aromática"></div>
+
+
+
+   <h2>100% Artesanal</h2>
+      <a href="#">Comprar ahora</a>
+    </div>
+  </section>
+
+  <main class="container">
+  <section class="container-features" aria-label="Características">
+    <div class="card-feature"><i class="fa-solid fa-plane-up"></i><div><span>Envío gratuito</span><p>Pedidos +$150</p></div></div>
+    <div class="card-feature"><i class="fa-solid fa-wallet"></i><div><span>Contrareembolso</span><p>Garantía total</p></div></div>
+    <div class="card-feature"><i class="fa-solid fa-gift"></i><div><span>Tarjeta regalo</span><p>Bonos especiales</p></div></div>
+    <div class="card-feature"><i class="fa-solid fa-headset"></i><div><span>Atención 24/7</span><p>381-405-1240</p></div></div>
+  </section>
+
+  <h2 class="heading-1">Aromas más vendidos</h2>
+  <section class="container-categories" aria-label="Categorías">
+    <div class="container-img"><img src="c:\Users\Lauti\Documents\maleee\velicoco.jpg" alt="Vela Florales"><p>velas Florales</p><span class="discount">-13%</span></div>
+    <div class="container-img"><img src="c:\Users\Lauti\Documents\maleee\citricos.jpg" alt="Vela Citricas"><p>velas Citricas</p><span class="discount">-13%</span></div>
+    <div class="container-img"><img src="c:\Users\Lauti\Documents\maleee\frutas.jpg" alt="Vela Frutales"><p>velas Frutales</p><span class="discount">-13%</span></div>
+  
+  </section>
+
+  <h2 class="heading-1">Mejores Productos</h2>
+  <section class="container-products" aria-label="Productos destacados">
+    <article class="card-product" aria-labelledby="prod1">
+      <div class="container-img"><img src="c:\Users\Lauti\Documents\maleee\velicoco.jpg" alt="Vela Coco"><span class="discount">-13%</span></div>
+      <div class="content-card-product"><div class="stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div><h3 id="prod1">Coco</h3><p class="price">$4500.60 <span>$5600.30</span></p></div>
+    </article>
+
+  <article class="card-product" aria-labelledby="prod2">
+      <div class="container-img"><img src="c:\Users\Lauti\Documents\maleee\vela amarilla.jpg" alt="Vela Vainilla"><span class="discount">-22%</span></div>
+      <div class="content-card-product"><div class="stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div><h3 id="prod2">Vainilla</h3><p class="price">$5000.70 <span>$7000.30</span></p></div>
+    </article>
+
+  <article class="card-product" aria-labelledby="prod3">
+      <div class="container-img"><img src="c:\Users\Lauti\Documents\maleee\vela morada.jpg" alt="Vela Lavanda"></div>
+      <div class="content-card-product"><div class="stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><h3 id="prod3">Lavanda</h3><p class="price">$3000.20</p></div>
+    </article>
+
+  <article class="card-product" aria-labelledby="prod4">
+      <div class="container-img"><img src="c:\Users\Lauti\Documents\maleee\vela rosa.jpg" alt="Vela Flor Blanca"></div>
+      <div class="content-card-product"><div class="stars" aria-hidden="true"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div><h3 id="prod4">Flor Blanca</h3><p class="price">$5200.60</p></div>
+    </article>
+  </section>
+
+  <section class="gallery" aria-label="Galería">
+    <img src="c:\Users\Lauti\Documents\maleee\fto1.jpg" alt="Foto 1">
+    <img src="c:\Users\Lauti\Documents\maleee\fto2.jpg" alt="Foto 2">
+    <img src="c:\Users\Lauti\Documents\maleee\fto3.jpg" alt="Foto 3">
+    <img src="c:\Users\Lauti\Documents\maleee\fto4.jpg" alt="Foto 4">
+    <img src="c:\Users\Lauti\Documents\maleee\fto5.jpg" alt="Foto 5">
+  </section>
+
+  <h2 class="heading-1">Últimos Blogs</h2>
+  <section class="container-blogs" aria-label="Blogs">
+    <article class="card-blog">
+      <img src="c:\Users\Lauti\Documents\maleee\velicoco.jpg" alt="Blog Coco">
+      <div class="content-blog">
+        <h3>Sueño de Coco - Vela de Coco</h3>
+        <span>8 de agosto 2025</span>
+        <p>Una fragancia suave y exótica que te transporta a una tarde de playa. Aroma a coco cremoso con notas de vainilla y almendra dulce.</p>
+      </div>
+    </article>
+
+   <article class="card-blog">
+      <img src="c:\Users\Lauti\Documents\maleee\jasmin.jpg" alt="Blog Jazmín">
+      <div class="content-blog">
+        <h3>Esencia de Jazmín - Vela de Jazmín</h3>
+        <span>8 de agosto 2025</span>
+        <p>Delicada y elegante, desprende el perfume natural del jazmín en flor, con notas de lirio y té blanco.</p>
+      </div>
+    </article>
+
+   <article class="card-blog">
+      <img src="c:\Users\Lauti\Documents\maleee\rosas margaritas.jpg" alt="Blog Rosas">
+      <div class="content-blog">
+        <h3>Jardín Floral - Vela de Rosas y Margaritas</h3>
+        <span>8 de agosto 2025</span>
+        <p>Combinación encantadora de rosas frescas y margaritas silvestres, ideal para momentos de autocuidado.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="container-features" aria-label="Especiales">
+    <div class="card-feature"><i class="fa-solid fa-tag"></i><div><span>Descuentos</span><p>Ofertas por tiempo limitado</p></div></div>
+    <div class="card-feature"><i class="fa-solid fa-heart"></i><div><span>Favoritos</span><p>Los más valorados</p></div></div>
+    <div class="card-feature"><i class="fa-solid fa-shield"></i><div><span>Calidad</span><p>Materiales premium</p></div></div>
+    <div class="card-feature"><i class="fa-solid fa-truck"></i><div><span>Envíos rápidos</span><p>Seguimiento en tiempo real</p></div></div>
+  </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container menu-footer">
+      <div>
+        <p class="title-footer">Información de Contacto</p>
+        <ul>
+          <li>Dirección: 71 Pennington Lane Vernon Rockville, CT 06066</li>
+          <li>Teléfono: 381-405-1240</li>
+          <li>Email: <a href="mailto:malenavalentinap@gmail.com">malenavalentinap@gmail.com</a></li>
+        </ul>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.instagram.com/Artisan_store.arg/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+
+   <div>
+        <p class="title-footer">Información</p>
+        <ul>
+          <li><a href="#">Acerca de Nosotros</a></li>
+          <li><a href="#">Información Delivery</a></li>
+        </ul>
+      </div>
+
+   <div>
+        <p class="title-footer">Mi Cuenta</p>
+        <ul>
+          <li><a href="#">Mi cuenta</a></li>
+          <li><a href="#">Historial de órdenes</a></li>
+        </ul>
+      </div>
+
+  <div class="newsletter">
+        <p class="title-footer">Boletín informativo</p>
+        <input type="email" placeholder="Ingresa tu correo aquí...">
+        <button>Suscríbete</button>
+      </div>
+    </div>
+
+  <div class="container copyright">
+      <p>© 2025 Male y Abi - Artisan Store</p>
+      <img src="c:\Users\Lauti\Documents\maleee\metodos de pago.jpg" alt="Métodos de pago" style="height:40px;">
+    </div>
+  </footer>
+</body>
+</html>
